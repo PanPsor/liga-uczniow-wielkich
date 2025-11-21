@@ -372,6 +372,8 @@
         align-items: center;
         position: relative;
         overflow: hidden;
+        transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+        box-shadow: 0 0 0 rgba(15, 23, 42, 0);
       }
 
       .award-card::before {
@@ -384,9 +386,22 @@
         pointer-events: none;
       }
 
-      .award-card:hover::before {
+            .award-card:hover::before {
         opacity: 1;
       }
+
+      .award-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        border-color: rgba(129, 140, 248, 0.65);
+      }
+
+      .award-card.last-place:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 22px 55px rgba(15, 23, 42, 0.6);
+        border-color: #1d4ed8;
+      }
+
 
       .award-card-main {
         position: relative;
@@ -468,12 +483,13 @@
         color: var(--text-muted);
       }
 
-      .award-visual {
+            .award-visual {
         position: relative;
         justify-self: end;
         display: flex;
         justify-content: flex-end;
       }
+
 
       .visual-placeholder {
         width: 160px;
@@ -501,7 +517,7 @@
         max-width: 7rem;
       }
 
-      .award-image {
+            .award-image {
         width: 100%;
         max-width: 190px;
         border-radius: 1.1rem;
@@ -606,10 +622,16 @@
         color: #e5e7eb;
       }
 
-      @media (max-width: 780px) {
+            @media (max-width: 780px) {
         .award-card {
           grid-template-columns: minmax(0, 1fr);
         }
+
+        .award-visual {
+          justify-content: center;
+          justify-self: center;
+        }
+      }
 
         .award-visual {
           justify-content: flex-start;
@@ -730,11 +752,11 @@
                             <div class="hero-right-list">
                 <div class="hero-right-item">
                   <span class="hero-right-label">Miejsca 1–5</span>
-                  <span class="hero-right-value">Cyfrowe karty podarunkowe Steam / Xbox</span>
+                  <span class="hero-right-value">Cyfrowe karty podarunkowe Steam&nbsp;/&nbsp;Xbox</span>
                 </div>
                 <div class="hero-right-item">
                   <span class="hero-right-label">Główna nagroda</span>
-                  <span class="hero-right-value">Puchar + 200 zł gift card</span>
+                  <span class="hero-right-value">Puchar + 200&nbsp;zł gift card</span>
                 </div>
                 <div class="hero-right-item">
                   <span class="hero-right-label">Specjalna "nagroda"</span>
@@ -765,17 +787,17 @@
                   <span class="rank-number">1</span>
                   <span class="rank-label">miejsce</span>
                 </div>
-                <h3 class="award-title">Nagroda główna – puchar + 200 zł</h3>
-                <p class="award-subtitle">Puchar Ligi Uczniów Wielkich oraz cyfrowa karta podarunkowa o wartości 200 zł.</p>
+                <h3 class="award-title">Nagroda główna – puchar + 200&nbsp;zł</h3>
+                <p class="award-subtitle">Puchar Ligi Uczniów Wielkich oraz cyfrowa karta podarunkowa o wartości 200&nbsp;zł.</p>
                 <p class="award-description">
                   Zwycięzca sezonu zdobywa puchar Ligi Uczniów Wielkich oraz kartę podarunkową o wartości
-                  <strong>200 zł</strong>, do wykorzystania na <strong>Steam</strong> lub w ekosystemie <strong>Xbox</strong>
+                  <strong>200&nbsp;zł</strong>, do wykorzystania na <strong>Steam</strong> lub w ekosystemie <strong>Xbox</strong>
                   (do wyboru przez zwycięzcę). Idealny pretekst, żeby dodać do biblioteki tę jedną grę, którą od dawna
                   masz na liście życzeń.
                 </p>
                 <div class="award-footer">
                   <span class="chip">Puchar za 1. miejsce</span>
-                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;/&nbsp;Xbox</span>
                 </div>
               </div>
               <div class="award-visual">
@@ -795,24 +817,24 @@
                   <span class="rank-number">2</span>
                   <span class="rank-label">miejsce</span>
                 </div>
-                <h3 class="award-title">Drugie miejsce – 100 zł gift card</h3>
-                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 100 zł na gry i dodatki.</p>
+                <h3 class="award-title">Drugie miejsce – 100&nbsp;zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 100&nbsp;zł na gry i dodatki.</p>
                 <p class="award-description">
-                  Za drugie miejsce przewidziana jest karta podarunkowa o wartości <strong>100 zł</strong>,
+                  Za drugie miejsce przewidziana jest karta podarunkowa o wartości <strong>100&nbsp;zł</strong>,
                   do wykorzystania na <strong>Steam</strong> lub <strong>Xbox</strong>. Możesz ją przeznaczyć na pełną grę,
                   rozbudowany dodatek, zestaw DLC albo po prostu doładować portfel na kolejne promocje.
                 </p>
                 <div class="award-footer">
-                  <span class="chip">Cyfrowa karta 100 zł</span>
-                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                  <span class="chip">Cyfrowa karta 100&nbsp;zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;/&nbsp;Xbox</span>
                 </div>
               </div>
               <div class="award-visual">
                 <div class="award-giftcard" aria-hidden="true">
                   <div class="award-giftcard-inner">
                     <div class="award-giftcard-top">
-                      <span class="award-giftcard-brand">Steam / Xbox</span>
-                      <span class="award-giftcard-amount">100 zł</span>
+                      <span class="award-giftcard-brand">Steam&nbsp;/&nbsp;Xbox</span>
+                      <span class="award-giftcard-amount">100&nbsp;zł</span>
                     </div>
                     <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
                   </div>
@@ -827,24 +849,24 @@
                   <span class="rank-number">3</span>
                   <span class="rank-label">miejsce</span>
                 </div>
-                <h3 class="award-title">Trzecie miejsce – 60 zł gift card</h3>
-                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 60 zł.</p>
+                <h3 class="award-title">Trzecie miejsce – 60&nbsp;zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 60&nbsp;zł.</p>
                 <p class="award-description">
-                  Trzecie miejsce to karta podarunkowa o wartości <strong>60 zł</strong>,
+                  Trzecie miejsce to karta podarunkowa o wartości <strong>60&nbsp;zł</strong>,
                   którą można zrealizować na <strong>Steamie</strong> lub <strong>Xboxie</strong>. W sam raz na solidny indyk,
                   przepustkę sezonową albo rozbudowane DLC do ulubionej gry.
                 </p>
                 <div class="award-footer">
-                  <span class="chip">Cyfrowa karta 60 zł</span>
-                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                  <span class="chip">Cyfrowa karta 60&nbsp;zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;/&nbsp;Xbox</span>
                 </div>
               </div>
               <div class="award-visual">
                 <div class="award-giftcard" aria-hidden="true">
                   <div class="award-giftcard-inner">
                     <div class="award-giftcard-top">
-                      <span class="award-giftcard-brand">Steam / Xbox</span>
-                      <span class="award-giftcard-amount">60 zł</span>
+                      <span class="award-giftcard-brand">Steam&nbsp;/&nbsp;Xbox</span>
+                      <span class="award-giftcard-amount">60&nbsp;zł</span>
                     </div>
                     <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
                   </div>
@@ -859,24 +881,24 @@
                   <span class="rank-number">4</span>
                   <span class="rank-label">miejsce</span>
                 </div>
-                <h3 class="award-title">Czwarte miejsce – 40 zł gift card</h3>
-                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 40 zł.</p>
+                <h3 class="award-title">Czwarte miejsce – 40&nbsp;zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 40&nbsp;zł.</p>
                 <p class="award-description">
-                  Za czwarte miejsce przewidziana jest karta podarunkowa o wartości <strong>40 zł</strong>
+                  Za czwarte miejsce przewidziana jest karta podarunkowa o wartości <strong>40&nbsp;zł</strong>
                   na <strong>Steam</strong> lub <strong>Xbox</strong>. To dobry sposób, by uzupełnić bibliotekę o mniejszy tytuł
                   albo odłożyć środki na większy zakup w przyszłości.
                 </p>
                 <div class="award-footer">
-                  <span class="chip">Cyfrowa karta 40 zł</span>
-                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                  <span class="chip">Cyfrowa karta 40&nbsp;zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;\/&nbsp;Xbox</span>
                 </div>
               </div>
               <div class="award-visual">
                 <div class="award-giftcard" aria-hidden="true">
                   <div class="award-giftcard-inner">
                     <div class="award-giftcard-top">
-                      <span class="award-giftcard-brand">Steam / Xbox</span>
-                      <span class="award-giftcard-amount">40 zł</span>
+                      <span class="award-giftcard-brand">Steam&nbsp;/&nbsp;Xbox</span>
+                      <span class="award-giftcard-amount">40&nbsp;zł</span>
                     </div>
                     <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
                   </div>
@@ -891,24 +913,24 @@
                   <span class="rank-number">5</span>
                   <span class="rank-label">miejsce</span>
                 </div>
-                <h3 class="award-title">Piąte miejsce – 20 zł gift card</h3>
-                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 20 zł.</p>
+                <h3 class="award-title">Piąte miejsce – 20&nbsp;zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 20&nbsp;zł.</p>
                 <p class="award-description">
                   Nawet piąte miejsce nie zostaje z pustymi rękami – przewidziana jest karta podarunkowa o wartości
-                  <strong>20 zł</strong>, do wykorzystania na <strong>Steam</strong> lub <strong>Xbox</strong>. Mały bonus, który może
+                  <strong>20&nbsp;zł</strong>, do wykorzystania na <strong>Steam</strong> lub <strong>Xbox</strong>. Mały bonus, który może
                   być początkiem kolejnej dużej gry.
                 </p>
                 <div class="award-footer">
-                  <span class="chip">Cyfrowa karta 20 zł</span>
-                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                  <span class="chip">Cyfrowa karta 20&nbsp;zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;/&nbsp;Xbox</span>
                 </div>
               </div>
               <div class="award-visual">
                 <div class="award-giftcard" aria-hidden="true">
                   <div class="award-giftcard-inner">
                     <div class="award-giftcard-top">
-                      <span class="award-giftcard-brand">Steam / Xbox</span>
-                      <span class="award-giftcard-amount">20 zł</span>
+                      <span class="award-giftcard-brand">Steam&nbsp;/&nbsp;Xbox</span>
+                      <span class="award-giftcard-amount">20&nbsp;zł</span>
                     </div>
                     <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
                   </div>
