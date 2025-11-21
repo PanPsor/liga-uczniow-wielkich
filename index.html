@@ -1,11 +1,1015 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>Moja pierwsza strona</title>
-</head>
-<body>
-  <h1>Cześć GitHub Pages!</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liga Uczniów Wielkich – Sezon 2026</title>
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Liga Uczniów Wielkich – Sezon 2026" />
+    <meta property="og:description" content="Dołącz do najbardziej prestiżowej ligi w tej części galaktyki. Walcz o puchar i wieczną sławę!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://media.printables.com/media/prints/754655/images/5887955_41e15a4c-c584-4b53-bdda-0604229bf0da_8537ec7d-2b93-4990-ae50-1b64dc11f9fc/thumbs/inside/1280x960/jpg/20240126_134539.webp" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="960" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://media.printables.com/media/prints/754655/images/5887955_41e15a4c-c584-4b53-bdda-0604229bf0da_8537ec7d-2b93-4990-ae50-1b64dc11f9fc/thumbs/inside/1280x960/jpg/20240126_134539.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg-page: #f5f7fb;
+        --bg-surface: #ffffff;
+        --bg-chip: #eef2ff;
+        --border-subtle: #e2e8f0;
+        --accent: #2563eb;
+        --accent-soft: #dbeafe;
+        --accent-strong: #1d4ed8;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+        --radius-xl: 1.5rem;
+        --radius-lg: 1rem;
+        --radius-pill: 999px;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #e0f2fe 0, #f5f7fb 45%, #f5f7fb 100%);
+        color: var(--text-main);
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 1.5rem 1.25rem 3rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page-shell {
+        width: 100%;
+        max-width: 1040px;
+      }
+
+      header.hero {
+        background: linear-gradient(135deg, #ffffff 0%, #e0edff 40%, #e6f6ff 100%);
+        border-radius: 2rem;
+        padding: 2.5rem 2.25rem 2.3rem;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 2rem;
+      }
+
+      header.hero::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15), transparent 55%),
+          radial-gradient(circle at 80% 10%, rgba(129, 140, 248, 0.16), transparent 55%),
+          radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.12), transparent 55%);
+        opacity: 0.75;
+        pointer-events: none;
+      }
+
+      .hero-inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
+        gap: 2.25rem;
+        align-items: center;
+      }
+
+      @media (max-width: 820px) {
+        header.hero {
+          padding: 1.9rem 1.6rem 1.8rem;
+        }
+
+        .hero-inner {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 1.7rem;
+        }
+      }
+
+      .season-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.25rem 0.85rem;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        backdrop-filter: blur(10px);
+        margin-bottom: 0.9rem;
+      }
+
+      .season-pill-dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #22c55e, #16a34a);
+        box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16);
+      }
+
+      .hero-title {
+        font-size: clamp(2rem, 3vw, 2.6rem);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-highlight {
+        display: inline-block;
+        background: linear-gradient(120deg, #1d4ed8, #0ea5e9);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .hero-subtitle {
+        color: var(--text-muted);
+        font-size: 0.98rem;
+        max-width: 35rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-bottom: 1.6rem;
+      }
+
+      .meta-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.4rem 0.85rem;
+        border-radius: var(--radius-pill);
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .meta-dot {
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 999px;
+        background: #4f46e5;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .btn-primary {
+        appearance: none;
+        border: none;
+        outline: none;
+        border-radius: var(--radius-pill);
+        padding: 0.7rem 1.4rem;
+        background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+        transform: translateY(0);
+        transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+      }
+
+      .btn-primary span.icon {
+        font-size: 1.05rem;
+        transform: translateY(0.5px);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 35px rgba(37, 99, 235, 0.45);
+        filter: brightness(1.03);
+      }
+
+      .btn-ghost {
+        appearance: none;
+        border-radius: var(--radius-pill);
+        padding: 0.6rem 1.1rem;
+        border: 1px solid rgba(148, 163, 184, 0.55);
+        background: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        backdrop-filter: blur(8px);
+        transition: background 140ms ease, border-color 140ms ease, transform 140ms ease;
+      }
+
+      .btn-ghost span.icon {
+        font-size: 1rem;
+      }
+
+      .btn-ghost:hover {
+        background: #ffffff;
+        border-color: rgba(148, 163, 184, 0.95);
+        transform: translateY(-1px);
+      }
+
+      .hero-right {
+        justify-self: end;
+      }
+
+      .hero-right-card {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 1.5rem;
+        padding: 1.4rem 1.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+        min-width: 0;
+      }
+
+      .hero-right-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .hero-right-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #111827;
+      }
+
+      .hero-right-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.65rem;
+        border-radius: var(--radius-pill);
+        background: var(--bg-chip);
+        color: #4f46e5;
+        font-weight: 500;
+      }
+
+      .hero-right-list {
+        display: grid;
+        gap: 0.65rem;
+        margin-bottom: 0.9rem;
+        font-size: 0.82rem;
+      }
+
+      .hero-right-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.7rem;
+        align-items: baseline;
+      }
+
+      .hero-right-label {
+        color: var(--text-muted);
+      }
+
+      .hero-right-value {
+        font-weight: 600;
+      }
+
+      .hero-right-footnote {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+      }
+
+      main {
+        margin-top: 0.5rem;
+      }
+
+      section#awards {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 1.6rem;
+        padding: 1.9rem 1.7rem 1.9rem;
+        border: 1px solid var(--border-subtle);
+        box-shadow: 0 18px 35px rgba(15, 23, 42, 0.06);
+      }
+
+      @media (max-width: 720px) {
+        section#awards {
+          padding: 1.5rem 1.25rem 1.6rem;
+        }
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 1.5rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 1.4rem;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.1rem;
+      }
+
+      .section-subtitle {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .section-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.8rem;
+        border-radius: var(--radius-pill);
+        border: 1px dashed rgba(148, 163, 184, 0.8);
+        color: var(--text-muted);
+        background: #f8fafc;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 640px) {
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .section-tag {
+          white-space: normal;
+        }
+      }
+
+      .award-card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        margin-top: 0.7rem;
+      }
+
+      .award-card {
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(226, 232, 240, 0.95);
+        background: linear-gradient(135deg, #ffffff 0%, #f9fbff 70%, #f5f7ff 100%);
+        padding: 1.25rem 1.35rem;
+        display: grid;
+        grid-template-columns: minmax(0, 3.2fr) minmax(0, 2.4fr);
+        gap: 1.2rem;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .award-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 0 0, rgba(129, 140, 248, 0.14), transparent 50%);
+        opacity: 0;
+        transition: opacity 180ms ease;
+        pointer-events: none;
+      }
+
+      .award-card:hover::before {
+        opacity: 1;
+      }
+
+      .award-card-main {
+        position: relative;
+        min-width: 0;
+      }
+
+      .place-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: var(--radius-pill);
+        background: #0f172a;
+        color: #e5e7eb;
+        font-size: 0.78rem;
+        font-weight: 500;
+        margin-bottom: 0.55rem;
+      }
+
+      .place-badge span.rank-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 999px;
+        background: #fbbf24;
+        color: #111827;
+        font-weight: 700;
+        font-size: 0.8rem;
+      }
+
+      .place-badge span.rank-label {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .place-badge.secondary {
+        background: #111827;
+        color: #e5e7eb;
+      }
+
+      .award-title {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.15rem;
+      }
+
+      .award-subtitle {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        margin-bottom: 0.55rem;
+      }
+
+      .award-description {
+        font-size: 0.87rem;
+        color: #1f2933;
+      }
+
+      .award-footer {
+        margin-top: 0.7rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+
+      .chip {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: var(--radius-pill);
+        background: var(--bg-chip);
+        color: #4338ca;
+        border: 1px solid rgba(129, 140, 248, 0.4);
+      }
+
+      .chip.muted {
+        background: #f1f5f9;
+        border-color: rgba(148, 163, 184, 0.75);
+        color: var(--text-muted);
+      }
+
+      .award-visual {
+        position: relative;
+        justify-self: end;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .visual-placeholder {
+        width: 160px;
+        max-width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 1.1rem;
+        border: 1px dashed rgba(148, 163, 184, 0.7);
+        background: repeating-linear-gradient(
+            135deg,
+            rgba(241, 245, 249, 0.7) 0,
+            rgba(241, 245, 249, 0.7) 8px,
+            rgba(226, 232, 240, 0.7) 8px,
+            rgba(226, 232, 240, 0.7) 16px
+          );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.74rem;
+        color: var(--text-muted);
+        text-align: center;
+        padding: 0.75rem;
+      }
+
+            .visual-placeholder span {
+        max-width: 7rem;
+      }
+
+      .award-image {
+        width: 100%;
+        max-width: 190px;
+        border-radius: 1.1rem;
+        object-fit: cover;
+        border: 1px solid rgba(148, 163, 184, 0.7);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.22);
+        background: #020617;
+      }
+
+      .award-image--trophy {
+        background: radial-gradient(circle at top, #facc15 0, #0f172a 55%);
+      }
+
+      .award-giftcard {
+        width: 180px;
+        max-width: 100%;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, #020617, #1f2937);
+        padding: 0.1rem;
+        box-shadow: 0 12px 26px rgba(15, 23, 42, 0.35);
+      }
+
+      .award-giftcard-inner {
+        border-radius: 0.9rem;
+        padding: 0.7rem 0.8rem;
+        background: radial-gradient(circle at 0 0, #facc15, #0f172a);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .award-giftcard-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .award-giftcard-brand {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.11em;
+        color: #e5e7eb;
+      }
+
+      .award-giftcard-amount {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #fef9c3;
+      }
+
+      .award-giftcard-foot {
+        font-size: 0.7rem;
+        color: #e5e7eb;
+        opacity: 0.85;
+      }
+
+      
+      .award-card.last-place {
+        background: linear-gradient(135deg, #0b1120 0%, #020617 60%, #111827 100%);
+        border-color: #020617;
+        color: #e5e7eb;
+      }
+
+      .award-card.last-place .award-title {
+        color: #f97316;
+      }
+
+      .award-card.last-place .award-subtitle {
+        color: #cbd5f5;
+      }
+
+      .award-card.last-place .award-description {
+        color: #e5e7eb;
+      }
+
+      .award-card.last-place .place-badge.secondary {
+        background: rgba(15, 23, 42, 0.7);
+        color: #e5e7eb;
+      }
+
+      .award-card.last-place .place-badge.secondary .rank-number {
+        background: #f97316;
+        color: #111827;
+      }
+
+      .award-card.last-place .chip {
+        background: rgba(15, 23, 42, 0.9);
+        border-color: rgba(148, 163, 184, 0.7);
+        color: #e5e7eb;
+      }
+
+      .award-card.last-place .visual-placeholder {
+        background: repeating-linear-gradient(
+            135deg,
+            rgba(15, 23, 42, 0.9) 0,
+            rgba(15, 23, 42, 0.9) 8px,
+            rgba(30, 64, 175, 0.9) 8px,
+            rgba(30, 64, 175, 0.9) 16px
+          );
+        border-color: rgba(148, 163, 184, 0.6);
+        color: #e5e7eb;
+      }
+
+      @media (max-width: 780px) {
+        .award-card {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .award-visual {
+          justify-content: flex-start;
+        }
+      }
+
+      .rules-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 160ms ease;
+        z-index: 40;
+      }
+
+      .rules-backdrop.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .rules-modal {
+        max-width: 520px;
+        width: 100%;
+        background: #ffffff;
+        border-radius: 1.5rem;
+        padding: 1.6rem 1.7rem 1.5rem;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+        position: relative;
+      }
+
+      .rules-modal-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .rules-modal-body {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      .rules-modal-close {
+        position: absolute;
+        top: 0.9rem;
+        right: 1rem;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1.1rem;
+        line-height: 1;
+        color: var(--text-muted);
+      }
+
+      .rules-modal-close:hover {
+        color: var(--text-main);
+      }
+
+      @media (max-width: 640px) {
+        .rules-modal {
+          padding: 1.4rem 1.2rem 1.3rem;
+        }
+      }
+
+      footer.page-footer {
+        margin-top: 1.5rem;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="season-pill">
+              <span class="season-pill-dot" aria-hidden="true"></span>
+              <span>Sezon 2026 · Liga Uczniów Wielkich</span>
+            </div>
+            <h1 class="hero-title">
+              Liga Uczniów Wielkich
+              <span class="hero-highlight">– sezon 2026</span>
+            </h1>
+            <p class="hero-subtitle">Witaj w sezonie, gdzie energia jest bardziej sigma‑rizz niż połowa TikToka o 3:17 w nocy. Tu się nie gra — tu się manifestuje dominację, farmi respekt i dropi legacy buffy na całe Legionowo, Łódź i okoliczne biome’y. Jeśli nie wejdziesz do gry… NPC vibes, totalny background character arc, certified L‑moment. Twój los, legend.</p>
+            <div class="hero-meta-row">
+              
+              <div class="meta-chip">
+                <span class="meta-dot" aria-hidden="true"></span>
+                <span>Uczestnicy: 5–8 osób</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <button id="scrollToAwards" class="btn-primary">
+                <span>Zobacz nagrody</span>
+                <span class="icon" aria-hidden="true">↓</span>
+              </button>
+              <button id="openRules" class="btn-ghost" type="button">
+                <span class="icon" aria-hidden="true">★</span>
+                <span>Regulamin sezonu 2026</span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-right-card" aria-label="Podsumowanie nagród">
+              <div class="hero-right-header">
+                <div>
+                  <div class="hero-right-title">Podsumowanie nagród</div>
+                  
+                </div>
+                <span class="hero-right-tag">Sezon 2026</span>
+              </div>
+                            <div class="hero-right-list">
+                <div class="hero-right-item">
+                  <span class="hero-right-label">Miejsca 1–5</span>
+                  <span class="hero-right-value">Cyfrowe karty podarunkowe Steam / Xbox</span>
+                </div>
+                <div class="hero-right-item">
+                  <span class="hero-right-label">Główna nagroda</span>
+                  <span class="hero-right-value">Puchar + 200 zł gift card</span>
+                </div>
+                <div class="hero-right-item">
+                  <span class="hero-right-label">Specjalna "nagroda"</span>
+                  <span class="hero-right-value">Gra + recenzja 1000 słów</span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="awards" aria-labelledby="awards-heading">
+          <div class="section-header">
+            <div>
+              <h2 id="awards-heading" class="section-title">Nagrody w sezonie</h2>
+              
+            </div>
+            
+          </div>
+
+          <div class="award-card-list">
+            <!-- 1 miejsce -->
+            <article class="award-card" aria-label="Nagroda za pierwsze miejsce">
+              <div class="award-card-main">
+                <div class="place-badge">
+                  <span class="rank-number">1</span>
+                  <span class="rank-label">miejsce</span>
+                </div>
+                <h3 class="award-title">Nagroda główna – puchar + 200 zł</h3>
+                <p class="award-subtitle">Puchar Ligi Uczniów Wielkich oraz cyfrowa karta podarunkowa o wartości 200 zł.</p>
+                <p class="award-description">
+                  Zwycięzca sezonu zdobywa puchar Ligi Uczniów Wielkich oraz kartę podarunkową o wartości
+                  <strong>200 zł</strong>, do wykorzystania na <strong>Steam</strong> lub w ekosystemie <strong>Xbox</strong>
+                  (do wyboru przez zwycięzcę). Idealny pretekst, żeby dodać do biblioteki tę jedną grę, którą od dawna
+                  masz na liście życzeń.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Puchar za 1. miejsce</span>
+                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <img
+                  src="https://media.printables.com/media/prints/754655/images/5887955_41e15a4c-c584-4b53-bdda-0604229bf0da_8537ec7d-2b93-4990-ae50-1b64dc11f9fc/thumbs/inside/1280x960/jpg/20240126_134539.webp"
+                  alt="Puchar za 1. miejsce w Lidze Uczniów Wielkich"
+                  class="award-image award-image--trophy"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <!-- 2 miejsce -->
+            <article class="award-card" aria-label="Nagroda za drugie miejsce">
+              <div class="award-card-main">
+                <div class="place-badge">
+                  <span class="rank-number">2</span>
+                  <span class="rank-label">miejsce</span>
+                </div>
+                <h3 class="award-title">Drugie miejsce – 100 zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 100 zł na gry i dodatki.</p>
+                <p class="award-description">
+                  Za drugie miejsce przewidziana jest karta podarunkowa o wartości <strong>100 zł</strong>,
+                  do wykorzystania na <strong>Steam</strong> lub <strong>Xbox</strong>. Możesz ją przeznaczyć na pełną grę,
+                  rozbudowany dodatek, zestaw DLC albo po prostu doładować portfel na kolejne promocje.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Cyfrowa karta 100 zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <div class="award-giftcard" aria-hidden="true">
+                  <div class="award-giftcard-inner">
+                    <div class="award-giftcard-top">
+                      <span class="award-giftcard-brand">Steam / Xbox</span>
+                      <span class="award-giftcard-amount">100 zł</span>
+                    </div>
+                    <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3 miejsce -->
+            <article class="award-card" aria-label="Nagroda za trzecie miejsce">
+              <div class="award-card-main">
+                <div class="place-badge">
+                  <span class="rank-number">3</span>
+                  <span class="rank-label">miejsce</span>
+                </div>
+                <h3 class="award-title">Trzecie miejsce – 60 zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 60 zł.</p>
+                <p class="award-description">
+                  Trzecie miejsce to karta podarunkowa o wartości <strong>60 zł</strong>,
+                  którą można zrealizować na <strong>Steamie</strong> lub <strong>Xboxie</strong>. W sam raz na solidny indyk,
+                  przepustkę sezonową albo rozbudowane DLC do ulubionej gry.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Cyfrowa karta 60 zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <div class="award-giftcard" aria-hidden="true">
+                  <div class="award-giftcard-inner">
+                    <div class="award-giftcard-top">
+                      <span class="award-giftcard-brand">Steam / Xbox</span>
+                      <span class="award-giftcard-amount">60 zł</span>
+                    </div>
+                    <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4 miejsce -->
+            <article class="award-card" aria-label="Nagroda za czwarte miejsce">
+              <div class="award-card-main">
+                <div class="place-badge secondary">
+                  <span class="rank-number">4</span>
+                  <span class="rank-label">miejsce</span>
+                </div>
+                <h3 class="award-title">Czwarte miejsce – 40 zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 40 zł.</p>
+                <p class="award-description">
+                  Za czwarte miejsce przewidziana jest karta podarunkowa o wartości <strong>40 zł</strong>
+                  na <strong>Steam</strong> lub <strong>Xbox</strong>. To dobry sposób, by uzupełnić bibliotekę o mniejszy tytuł
+                  albo odłożyć środki na większy zakup w przyszłości.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Cyfrowa karta 40 zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <div class="award-giftcard" aria-hidden="true">
+                  <div class="award-giftcard-inner">
+                    <div class="award-giftcard-top">
+                      <span class="award-giftcard-brand">Steam / Xbox</span>
+                      <span class="award-giftcard-amount">40 zł</span>
+                    </div>
+                    <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5 miejsce -->
+            <article class="award-card" aria-label="Nagroda za piąte miejsce">
+              <div class="award-card-main">
+                <div class="place-badge secondary">
+                  <span class="rank-number">5</span>
+                  <span class="rank-label">miejsce</span>
+                </div>
+                <h3 class="award-title">Piąte miejsce – 20 zł gift card</h3>
+                <p class="award-subtitle">Cyfrowa karta podarunkowa o wartości 20 zł.</p>
+                <p class="award-description">
+                  Nawet piąte miejsce nie zostaje z pustymi rękami – przewidziana jest karta podarunkowa o wartości
+                  <strong>20 zł</strong>, do wykorzystania na <strong>Steam</strong> lub <strong>Xbox</strong>. Mały bonus, który może
+                  być początkiem kolejnej dużej gry.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Cyfrowa karta 20 zł</span>
+                  <span class="chip muted">Platforma do wyboru: Steam / Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <div class="award-giftcard" aria-hidden="true">
+                  <div class="award-giftcard-inner">
+                    <div class="award-giftcard-top">
+                      <span class="award-giftcard-brand">Steam / Xbox</span>
+                      <span class="award-giftcard-amount">20 zł</span>
+                    </div>
+                    <div class="award-giftcard-foot">Cyfrowa karta podarunkowa</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ostatnie miejsce -->
+            <article class="award-card last-place" aria-label="Specjalna nagroda za ostatnie miejsce">
+              <div class="award-card-main">
+                <div class="place-badge secondary">
+                  <span class="rank-number">∞</span>
+                  <span class="rank-label">ostatnie miejsce</span>
+                </div>
+                <h3 class="award-title">Specjalna "nagroda" – konieczność zagrania w grę wybraną przez zwycięzcę sezonu</h3>
+                <p class="award-subtitle">
+                  Zwycięzca wybiera dowolną grę — absolutnie dowolną. Może to być głośny hit, mały indyk, remaster z 2004 roku albo najnowszy chiński „blockbuster”, który wygląda jak trailer z 2009 roku i ma 12 systemów walki, z czego żaden nie działa. To tylko przykład tego, co *może* Cię czekać.
+                </p>
+                <p class="award-description">
+                  Przegrany sezonu otrzymuje zaszczyt zmierzenia się z tytułem wskazanym przez zwycięzcę — bez negocjacji, bez litości, bez zwrotów akcji, które mają sens — produkcją, która jednocześnie próbuje być soulslike'iem, MMO, bijatyką, grą rhythm i dramatem politycznym. Fabuła została napisana prawdopodobnie przez generator lorem ipsum, a dialogi brzmią jak połączenie czatu GPT‑2 z tłumaczem Bing.
+                  <br><br>
+                  Po ukończeniu tego widowiska technologiczno‑kulturowego, gracz musi napisać <strong>recenzję o długości minimum 1000 słów</strong>. Może zawierać żal, rozgoryczenie, egzystencjalne wątpliwości i wykresy — byle było dużo tekstu.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Gra wybrana przez zwycięzcę</span>
+                  <span class="chip">Obowiązkowa recenzja 1000+ słów</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/0610/7c7a6a34d376b1e789ceb36f6c0d3bcf3fefeb48655f1cc8.jpg" alt="Kara dla ostatniego miejsca – obowiązkowa gra akcji" class="award-image" loading="lazy">
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <div id="rulesDialog" class="rules-backdrop" aria-hidden="true">
+        <div class="rules-modal" role="dialog" aria-modal="true" aria-labelledby="rules-title">
+          <button type="button" class="rules-modal-close" aria-label="Zamknij regulamin">×</button>
+          <h2 id="rules-title" class="rules-modal-title">Regulamin sezonu 2026</h2>
+          <p class="rules-modal-body">
+            Zasady sezonu 2026 nie zostały jeszcze ostatecznie ustalone. Ten moduł zostanie uzupełniony,
+            gdy tylko pełny regulamin będzie gotowy.
+          </p>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <p>
+          © Liga Uczniów Wielkich – sezon 2026
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      const scrollButton = document.getElementById("scrollToAwards");
+      const awardsSection = document.getElementById("awards");
+      const rulesButton = document.getElementById("openRules");
+      const rulesDialog = document.getElementById("rulesDialog");
+      const rulesClose = document.querySelector(".rules-modal-close");
+
+      if (scrollButton && awardsSection) {
+        scrollButton.addEventListener("click", () => {
+          awardsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      const openRules = () => {
+        if (!rulesDialog) return;
+        rulesDialog.classList.add("is-visible");
+        rulesDialog.setAttribute("aria-hidden", "false");
+      };
+
+      const closeRules = () => {
+        if (!rulesDialog) return;
+        rulesDialog.classList.remove("is-visible");
+        rulesDialog.setAttribute("aria-hidden", "true");
+      };
+
+      if (rulesButton && rulesDialog) {
+        rulesButton.addEventListener("click", openRules);
+      }
+
+      if (rulesClose) {
+        rulesClose.addEventListener("click", closeRules);
+      }
+
+      if (rulesDialog) {
+        rulesDialog.addEventListener("click", (event) => {
+          if (event.target === rulesDialog) {
+            closeRules();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeRules();
+        }
+      });
+    </script>
+  </body>
 </html>
