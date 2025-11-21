@@ -633,16 +633,11 @@
         }
       }
 
-        .award-visual {
-          justify-content: flex-start;
-        }
-      }
-
       .rules-backdrop {
         position: fixed;
         inset: 0;
         background: rgba(15, 23, 42, 0.55);
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         padding: 1.5rem;
@@ -653,6 +648,7 @@
       }
 
       .rules-backdrop.is-visible {
+        display: flex;
         opacity: 1;
         pointer-events: auto;
       }
