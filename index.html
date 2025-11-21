@@ -702,6 +702,42 @@
         color: var(--text-muted);
         text-align: center;
       }
+          /* Royale special style */
+      .award-card-royale {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 60%, #a7f3d0 100%);
+        border-color: #6ee7b7;
+      }
+      .award-card-royale .place-badge {
+        background: #065f46;
+        color: #ecfdf5;
+      }
+      .award-card-royale .award-title {
+        color: #065f46;
+      }
+
+      /* Summary bold style */
+      .award-card-summary {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 55%, #fcd34d 100%);
+        border-color: #fbbf24;
+        box-shadow: 0 18px 55px rgba(202, 138, 4, 0.3);
+        /* FIX: jednokolumnowy układ */
+        display: grid;
+        grid-template-columns: 1fr !important;
+        justify-items: center;
+        text-align: center;
+      }
+      .award-card-summary .place-badge {
+        background: #78350f;
+        color: #fef3c7;
+      }
+      .award-card-summary .rank-number {
+        background: #fef08a !important;
+      }
+      .award-card-summary .award-title {
+        color: #92400e;
+        font-size: 1.2rem;
+      }
+
     </style>
   </head>
   <body>
@@ -959,6 +995,54 @@
                 <img src="https://image.api.playstation.com/vulcan/ap/rnd/202412/0610/7c7a6a34d376b1e789ceb36f6c0d3bcf3fefeb48655f1cc8.jpg" alt="Kara dla ostatniego miejsca – obowiązkowa gra akcji" class="award-image" loading="lazy">
               </div>
             </article>
+
+            <!-- nagrody kwartalne -->
+            <article class="award-card award-card-royale" aria-label="Nagrody kwartalne w trybie Royale">
+              <div class="award-card-main">
+                <div class="place-badge secondary">
+                  <span class="rank-number">Q</span>
+                  <span class="rank-label">co kwartał</span>
+                </div>
+                <h3 class="award-title">Nagrody kwartalne – Royale MVP</h3>
+                <p class="award-subtitle">Co kwartał dodatkowa nagroda 40&nbsp;zł za najwyższe miejsce w trybie Royale.</p>
+                <p class="award-description">
+                  Na koniec każdego kwartału sprawdzamy tabelę wyników w trybie <strong>Royale</strong>. Osoba, która
+                  w danym okresie zajmuje najwyższe miejsce, zgarnia <strong>40&nbsp;zł</strong> w formie cyfrowej karty
+                  podarunkowej na <strong>Steam</strong> lub <strong>Xbox</strong>. To mały, ale bardzo przyjemny boost do
+                  sezonowego grindu.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">40&nbsp;zł co kwartał</span>
+                  <span class="chip muted">Platforma do wyboru: Steam&nbsp;/&nbsp;Xbox</span>
+                </div>
+              </div>
+              <div class="award-visual">
+                <div class="award-giftcard" aria-hidden="true">
+                  <div class="award-giftcard-inner">
+                    <div class="award-giftcard-top">
+                      <span class="award-giftcard-brand">Steam&nbsp;/&nbsp;Xbox</span>
+                      <span class="award-giftcard-amount">40&nbsp;zł</span>
+                    </div>
+                    <div class="award-giftcard-foot">Bonus za wynik w Royale</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- podsumowanie puli nagród -->
+            <article class="award-card award-card-summary" aria-label="Podsumowanie maksymalnej nagrody sezonu">
+  <div class="award-card-main" style="text-align:center; padding:2.6rem 1rem;">
+    <h3 class="award-title" style="font-size:1.65rem; font-weight:800; margin-bottom:0.8rem; color:#78350f; letter-spacing:-0.015em;">Maksymalna wygrana w sezonie</h3>
+
+    <div style="font-size:3.6rem; font-weight:900; color:#b45309; margin-bottom:0.9rem; line-height:1;">360&nbsp;zł + puchar</div>
+
+    <p class="award-description" style="font-size:1rem; color:#7c2d12; max-width:30rem; margin:0 auto 1.2rem; line-height:1.55;">
+      Tyle może zgarnąć jeden zawodnik, jeśli <strong>wygra cały sezon</strong> oraz zgarnie <strong>wszystkie cztery kwartalne nagrody Royale</strong>.
+      Całkowita dominacja, pełny przelot meta‑power‑fantasy i wieczna chwała.
+    </p>
+  </div>
+</article>
+
           </div>
         </section>
       </main>
