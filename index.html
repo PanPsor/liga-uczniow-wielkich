@@ -633,6 +633,70 @@
         }
       }
 
+       .extra-rewards-grid {
+        margin-top: 0.3rem;
+        margin-bottom: 0.2rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .extra-card {
+        border-radius: var(--radius-lg);
+        border: 1px dashed var(--border-subtle);
+        background: #f8fafc;
+        padding: 0.85rem 0.95rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 120px;
+      }
+
+      .extra-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+
+      .extra-desc {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .extra-card-main .award-footer {
+        margin-top: 0.6rem;
+      }
+
+      .extra-card-soon {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .extra-emoji {
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 0.2rem;
+      }
+
+      .extra-coming {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .extra-soon-desc {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 900px) {
+        .extra-rewards-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+
       .rules-backdrop {
         position: fixed;
         inset: 0;
@@ -1028,6 +1092,38 @@
                 </div>
               </div>
             </article>
+
+             <!-- dodatkowe nagrody i niespodzianki -->
+            <div class="extra-rewards-grid" aria-label="Dodatkowe nagrody i niespodzianki sezonu">
+              <div class="extra-card extra-card-main">
+                <div class="extra-title">Dodatkowe nagrody za najlepszą i najgorszą grę</div>
+                <p class="extra-desc">
+                  Na koniec sezonu wybieramy <strong>najlepszą</strong> i <strong>najgorszą</strong> grę, jaka przewinęła się przez ligę.
+                  Obie pozycje otrzymują swoje własne wyróżnienia i wieczną dokumentację w kronikach sezonu.
+                </p>
+                <div class="award-footer">
+                  <span class="chip">Sponsor: Krutzi</span>
+                </div>
+              </div>
+
+              <div class="extra-card extra-card-soon">
+                <div class="extra-emoji">?</div>
+                <div class="extra-coming">Coming soon</div>
+                <p class="extra-soon-desc">Sekretna nagroda #1 – zostanie ujawniona w trakcie sezonu.</p>
+              </div>
+
+              <div class="extra-card extra-card-soon">
+                <div class="extra-emoji">?</div>
+                <div class="extra-coming">Coming soon</div>
+                <p class="extra-soon-desc">Sekretna nagroda #2 – jeszcze w przygotowaniu.</p>
+              </div>
+
+              <div class="extra-card extra-card-soon">
+                <div class="extra-emoji">?</div>
+                <div class="extra-coming">Coming soon</div>
+                <p class="extra-soon-desc">Sekretna nagroda #3 – ogłosimy w trakcie rozgrywek.</p>
+              </div>
+            </div>
 
             <!-- podsumowanie puli nagród -->
             <article class="award-card award-card-summary" aria-label="Podsumowanie maksymalnej nagrody sezonu">
